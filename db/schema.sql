@@ -1,24 +1,37 @@
-DROP DATABASE IF EXISTS inventory_db;
-CREATE DATABASE inventory_db;
+DROP DATABASE IF EXISTS employee_db;
+CREATE DATABASE employee_db;
 
-USE inventory_db;
+USE employee_db;
 
-CREATE TABLE department(
-  id INTEGER PRIMARY KEY,
-  Ename VARCHAR(30)
+CREATE TABLE department (
+  id INT NOT NULL AUTO_INCREMENT,
+  dep_name VARCHAR(50) NULL,
+  PRIMARY KEY (id)
 );
 
-CREATE TABLE roll(
-  id INTEGER PRIMARY KEY,
-  title VARCHAR(30),
-  salary DECIMAL,
-  department_id INT
+CREATE TABLE roles (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(45) NULL,
+  salary DECIMAL(10,4) NULL,
+  dep_id INT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (dep_id) REFERENCES department(id)
 );
 
-CREATE TABLE(
-  id INTEGER PRIMARY KEY,
-  first_name VARCHAR(30),
-  last_name DECIMAL,
-  role_id INT,
-  manager_id INT,
+
+CREATE TABLE manager (
+  id INT AUTO_INCREMENT,
+  managerName VARCHAR(50),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE employees (
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(50) NULL,
+  last_name VARCHAR(50) NULL,
+  role_id INT NULL,
+  manager_id INT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (role_id) REFERENCES roles(id),
+  FOREIGN KEY (manager_id) REFERENCES manager(id)
 );

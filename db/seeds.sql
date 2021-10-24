@@ -1,17 +1,18 @@
-INSERT INTO department (id, Ename)
+INSERT INTO department (id, dep_name)
 VALUES 
-  (1, "Lanny Poffo"),
-  (2,"Dracula"),
-  (3,"Mankind"),
-  (4,"The Epic of Gilgamesh"),
-  (5, "The Waiting Years");
+  (61, "Accounting"),
+  (62,"Human Resources"),
+  (63,"Sales"),
+  (64,"Engineering"),
+  (65, "Legal");
 
 
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO roles (id, title, salary, dep_id)
 VALUES 
-    (1, manager, 50000, 3)
+    (55, "Sales", 50000, 63);
 
 
-INSERT INTO Employee (id, first_name, last_name, role_id, manager_id)
+INSERT INTO employees (id, first_name, last_name)
 VALUES 
+    (55, 'dave', 'king');
