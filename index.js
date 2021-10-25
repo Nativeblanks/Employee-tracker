@@ -1,5 +1,5 @@
 // Set up inquirer mysq and tables npm
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const table = require("console.table");
 
@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "Saleen1050!",
+  password: "password123",
   database: "employee_db",
 });
 
@@ -319,7 +319,7 @@ const updateEmployeeRoles = () => {
                   [roleId, employeeId],
                   (err) => {
                     if (err) throw err;
-                    
+
                     start();
                   }
                 );

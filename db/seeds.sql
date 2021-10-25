@@ -1,18 +1,26 @@
-INSERT INTO department (id, dep_name)
+INSERT INTO department (dep_name)
 VALUES 
-  (61, "Accounting"),
-  (62,"Human Resources"),
-  (63,"Sales"),
-  (64,"Engineering"),
-  (65, "Legal");
+  ("Accounting"),
+  ("Human Resources"),
+  ("Sales"),
+  ("Engineering"),
+  ("Legal");
 
 
 
-INSERT INTO roles (id, title, salary, dep_id)
+INSERT INTO roles (title, salary, dep_id)
 VALUES 
-    (55, "Sales", 50000, 63);
+    ("Sales", "50000.00", 3),
+    ('Sales Manager', '250000.00', 2),
+    ('HR Manager', '200000.00', 3),
+    ('Engineer', '300000.00', 4),
+    ('IT Manager', '150000.00', 4);
 
 
-INSERT INTO employees (id, first_name, last_name)
+INSERT INTO employees (first_name, last_name, role_id )
 VALUES 
-    (55, 'dave', 'king');
+    ('Dave', 'King', 1),
+    ('Ray', 'Lynch', 2),
+    ('Mitch', 'Hedberg', 3),
+    ('Wayne', 'Knight', 4),
+    ('Bruce', 'Wayne', 5);
